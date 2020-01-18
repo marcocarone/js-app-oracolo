@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Gelasio:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Esercitazione JS 08.01.2020</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>L’oracolo della Sibilla</h1>
+    <img id="prima_scelta" class="carte" src="img/retro.png" alt="">
+    <img id="seconda_scelta" class="carte " src="img/retro.png" alt="">
+    <img id="terza_scelta" class="carte " src="img/retro.png" alt="">
+    <img id="quarta_carta" class="carte" src="img/retro.png" alt="">
+    <img id="quinta_carta" class="carte " src="img/retro.png" alt="">
+    <img id="sesta_carta" class="carte " src="img/retro.png" alt="">
+  </div>
+  <div id="container2" class="container2">
+    <button id="mescola" type="button" name="button">Mescola</button>
+    <button id="scegli_carte" class="scegli_carte" type="button" name="button">Scegli le carte</button>
+
+    <audio id="myAudio">
+      <source src="img/audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="caricamentoAudio">
+      <source src="img/audio_caricamento.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+
+  <div id="container__responso" class="">
+    <h2 id="nome_carta1"></h2>
+    <p id="descrizione_carta1"></p>
+    <p id="significato_carta1"></p>
+    <h2 id="nome_carta2"></h2>
+    <p id="descrizione_carta2"></p>
+    <p id="significato_carta2"></p>
+    <h2 id="nome_carta3"></h2>
+    <p id="descrizione_carta3"></p>
+    <p id="significato_carta3"></p>
+    <h2 id="nome_carta4"></h2>
+    <p id="descrizione_carta4"></p>
+    <p id="significato_carta4"></p>
+    <h2 id="nome_carta5"></h2>
+    <p id="descrizione_carta5"></p>
+    <p id="significato_carta5"></p>
+    <h2 id="nome_carta6"></h2>
+    <p id="descrizione_carta6"></p>
+    <p id="significato_carta6"></p>
+    <p id="responso"></p>
+    <h2 class="caricamento">Caricamento in corso. attendere...</h2>
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/script.js" charset="utf-8"></script>
+</body>
+
+</html>
