@@ -17,15 +17,12 @@ $(document).ready(function() {
       $("#quinta_carta").addClass("carta5");
       $("#sesta_carta").addClass("carta6");
 
-
       var x = document.getElementById("myAudio");
 
       function playAudio() {
         x.play();
       }
       playAudio()
-
-
 
       var listaCarte = ["img/il_matto.png", "img/il_mondo.png", "img/il_papa.png", "img/il_sole.png", "img/l_appeso.png", "img/l_eremita.png"];
       console.log("lista carte " + listaCarte);
@@ -46,7 +43,7 @@ $(document).ready(function() {
       function ritardoBottone() {
         setTimeout(function() {
           $("#scegli_carte").fadeIn(600);
-        }, 12000);
+        }, 0);
       }
 
       // FUNZIONE SCEGLI CARTE
@@ -72,27 +69,25 @@ $(document).ready(function() {
           var numeroMin = 1
 
           var numeroCarteSelezionabili = 0;
+          var numeriProibiti = [];
           while (numeroCarteSelezionabili < 3) {
-            var numeriUtenteScelti = parseInt(prompt("scegli le carte. inserisci un numero da 1 a 6 "));
-            richiediNumeroCorretto();
-            // var listaNuova =[];
-            // listaNuova.push(numeriUtenteScelti);
 
+            var numeriUtenteScelti = parseInt(prompt("scegli le carte. inserisci un numero da 1 a 6 "));
+
+            while (presenteInArray(numeriProibiti, numeriUtenteScelti) == true) {
+              numeriUtenteScelti = parseInt(prompt("Non puoi inserire lo stesso numero. Riprova"));
+            }
+            numeriProibiti.push(numeriUtenteScelti);
+            console.log("nimeri proibiti" + numeriProibiti);
+            richiediNumeroCorretto();
 
             if (presenteInArray(listaCarteScelte, numeriUtenteScelti) == false) {
-              listaCarteScelte.push(listaCarteCasuale[numeriUtenteScelti - 1]);
-              // se il numero dell'utente è presente
-              if (presenteInArray(listaCarteScelte, numeriUtenteScelti) == true) {
-                console.log(listaCarteScelte);
-                console.log(numeriUtenteScelti);
 
-                numUgualeInserito()
-              }
+              listaCarteScelte.push(listaCarteCasuale[numeriUtenteScelti - 1]);
+              console.log("lista prova :" + listaCarteScelte);
             }
 
             numeroCarteSelezionabili++
-            console.log("numero utente scelto " + numeriUtenteScelti);
-
           }
 
           listaCarteScelte.sort();
@@ -113,11 +108,6 @@ $(document).ready(function() {
             }
           }
 
-          function numUgualeInserito() {
-            while (presenteInArray(listaCarteScelte, numeriUtenteScelti) == true) {
-              numeriUtenteScelti = parseInt(prompt("Avevi già inserito questo numero. Riprova con un numero diverso da " + numeroMin + " a " + numeroMax));
-            }
-          }
 
           ritardoBottone2()
           var caricAudio = document.getElementById("caricamentoAudio");
