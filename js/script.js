@@ -43,7 +43,7 @@ $(document).ready(function() {
       function ritardoBottone() {
         setTimeout(function() {
           $("#scegli_carte").fadeIn(600);
-        }, 0);
+        }, 12000);
       }
 
       // FUNZIONE SCEGLI CARTE
