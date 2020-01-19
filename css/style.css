@@ -306,14 +306,21 @@ h1 {
   h1 {
     font-size: 1.4em;
     font-weight: 700;
-}
+    margin-bottom: 200px;
+  }
+
   .carte {
     height: 180px;
+    top: 200px;
   }
 
   .carte2 {
     height: 180px;
     margin: 0 5px;
+  }
+
+  .container {
+    height: 300px;
   }
 
   .container2 {
